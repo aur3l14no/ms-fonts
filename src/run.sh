@@ -17,14 +17,17 @@ sudo pacman -U --noconfirm ./*-zh_cn*.pkg.tar.zst
 cd /tmp
 
 # adobe fonts
-sudo paru -S --noconfirm \
+paru -S --noconfirm \
     adobe-source-han-serif-cn-fonts \
     adobe-source-han-sans-cn-fonts
 
 
 # compress
-sudo paru -S --noconfirm zip p7zip
+paru -S --noconfirm zip p7zip
+
+sudo bash <<EOF
 mkdir -p $ARTIFACTS_PATH
 find /usr/share/fonts/ -type f -exec cp {} $ARTIFACTS_PATH/ \;
 zip -r $ARTIFACTS_PATH/zh-cn-fonts.zip /usr/share/fonts 
 7z a $ARTIFACTS_PATH/zh-cn-fonts.7z /usr/share/fonts 
+EOF
