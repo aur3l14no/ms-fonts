@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  # monthly
+  schedule:
+    - cron: '0 0 1 * *'
 
 jobs:
   build:
@@ -22,7 +25,7 @@ jobs:
     # Run the Docker image
     - name: Run
       run: |-
-        docker run --rm -v /tmp/artifacts:/tmp/artifacts
+        docker run --rm -v /tmp/artifacts:/tmp/artifacts zh-cn-fonts
     
     # Upload the artifact
     - name: Upload
