@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Build image
+    name: Build and Upload
     runs-on: ubuntu-latest
 
     steps:
