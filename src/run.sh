@@ -25,6 +25,6 @@ sudo paru -S --noconfirm \
 # compress
 sudo paru -S --noconfirm zip p7zip
 mkdir -p $ARTIFACTS_PATH
-find -type f /usr/share/fonts/ -exec cp {} $ARTIFACTS_PATH/ \;
+find /usr/share/fonts/ -type f -exec cp {} $ARTIFACTS_PATH/ \;
 zip -r $ARTIFACTS_PATH/zh-cn-fonts.zip /usr/share/fonts 
 7z a $ARTIFACTS_PATH/zh-cn-fonts.7z /usr/share/fonts 
