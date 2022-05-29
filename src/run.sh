@@ -22,12 +22,15 @@ paru -S --noconfirm \
     adobe-source-han-sans-cn-fonts
 
 
-# compress
-paru -S --noconfirm zip p7zip
+# # compress
+# paru -S --noconfirm zip p7zip
 
-sudo bash <<EOF
-mkdir -p $ARTIFACTS_PATH
-find /usr/share/fonts/ -type f -exec cp {} $ARTIFACTS_PATH/ \;
-zip -r $ARTIFACTS_PATH/zh-cn-fonts.zip /usr/share/fonts 
-7z a $ARTIFACTS_PATH/zh-cn-fonts.7z /usr/share/fonts 
-EOF
+# sudo bash <<EOF
+# mkdir -p $ARTIFACTS_PATH
+# find /usr/share/fonts/ -type f -exec cp {} $ARTIFACTS_PATH/ \;
+# zip -r $ARTIFACTS_PATH/zh-cn-fonts.zip /usr/share/fonts 
+# 7z a $ARTIFACTS_PATH/zh-cn-fonts.7z /usr/share/fonts 
+# EOF
+
+# copy to artifact directory
+sudo cp -r /usr/share/fonts/ $ARTIFACTS_PATH/
