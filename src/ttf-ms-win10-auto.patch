@@ -1,0 +1,23 @@
+--- PKGBUILD.orig	2022-05-29 17:37:14.000000000 +0800
++++ PKGBUILD	2022-05-29 17:37:43.000000000 +0800
+@@ -172,6 +172,10 @@
+ simsunb.ttf                                                 # SimSun-ExtB
+ msyh.ttc       msyhbd.ttc                                   # Microsoft YaHei
+ msyhl.ttc                                                   # Microsoft YaHei Light
++Deng.ttf       Dengb.ttf                                    # DengXian
++Dengl.ttf                                                   # DengXian Light
++simkai.ttf                                                  # KaiTi
++simhei.ttf                                                  # SimHei
+ )
+ 
+ _ttf_ms_win10_zh_tw=( # Chinese (Traditional)
+@@ -461,8 +465,7 @@
+     fi
+   done
+   if [ $_fail ]; then
+-    echo "One or more files fail the integrity check or are missing. Exiting."
+-    exit 255
++    echo "One or more files fail the integrity check or are missing. Skipped."
+   fi
+ }
+ 

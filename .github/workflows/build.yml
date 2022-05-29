@@ -22,11 +22,11 @@ jobs:
     # Run the Docker image
     - name: Run
       run: |-
-        docker run --rm -v /tmp/fonts:/usr/share/fonts zh-cn-fonts
+        docker run --rm -v /tmp/artifacts:/tmp/artifacts
     
     # Upload the artifact
     - name: Upload
       uses: actions/upload-artifact@v3.1.0
       with:
-        path: /tmp/zh-cn-fonts.zip
+        path: /tmp/artifacts/
         retention-days: 30
